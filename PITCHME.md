@@ -69,7 +69,8 @@
 ### Why does this matter?
 
 @ol
-- It can be really useful when debugging
+- It can help you understand what objects are capable of when debugging
+- understanding these methods can provide a deeper understanding of the python language
 - effecticly using these data model methods can create classes that are:
     @ul
     - easier to use
@@ -77,6 +78,22 @@
     - more flexible
     @ulend
 @olend
+
+---
+
+### \_\_dict\_\_
+
+```
+>>> class Test(object):
+...     pass
+>>> obj = Test()
+>>> obj.__dict__
+{}
+>>> obj.x = 1
+>>> obj.__dict__
+{'x': 1}
+>>> dir(obj)
+```
 
 ---?code=sample/binomial/binomial.py&lang=python&title=Binomial
 
@@ -101,7 +118,7 @@
 
 @ul
 - mathmatical functions should be callable
-- we can make our new binomial class callable by defining a \_\_call\_\_ method
+- we can make then binomial class callable by defining a \_\_call\_\_ method
 - this method is the data model method functions define to make themself callable
 - the parameters to \_\_call\_\_ are the parameters passed by the caller
 @ulend
@@ -186,7 +203,7 @@
 
 ---?code=sample/binomial/binomial_generator.dir&title=Binomial Generator Dir
 
-@[4-7](notice out generator contains an \_\_iter\_\_ and \_\_next\_\_ function)
+@[4-7](notice the generator contains an \_\_iter\_\_ and \_\_next\_\_ function)
 ---
 
 ### Questions?
