@@ -85,7 +85,7 @@
 
 ---?code=sample/binomial/binomial.txt&title=Binomial Output
 
-@[1](this is not very useful, can we make it better)
+@[1](lets make this output more useful)
 
 ---?code=sample/binomial/binomial_str.py&title=Binomial Str
 
