@@ -18,7 +18,6 @@
     - functions/methods
     - class/types
     - modules
-    - iterators
 
 @ulend
 
@@ -54,7 +53,7 @@
 @ul
 
 - python uses an internal data model to define all objects
-- this data model is what the internal python objects to make objects
+- this data model is to define how python interacts all objects
     - opearable with +, -, %, <, <=, and other operators
     - make objects callable
     - make objects iteable
@@ -79,7 +78,6 @@
     - more flexible
     @ulend
 @olend
-
 
 ---?code=sample/binomial/binomial.py&lang=python&title=Binomial
 
