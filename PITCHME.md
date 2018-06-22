@@ -53,12 +53,11 @@
 @ul
 
 - python uses an internal data model to define all objects
-- this data model is to define how python interacts all objects
-    - opearable with +, -, %, <, <=, and other operators
-    - make objects callable
-    - make objects iteable
-    - support dictionary style gets (ex: obj['key'])
-    - construct classes
+- These data models define objects as:
+    - hashable
+    - iterable
+    - callable
+    - operable with mathmatical operators +, -, %, <, <=, ...
     - and a lot more (https://docs.python.org/3/reference/datamodel.html)
 
 @ulend
