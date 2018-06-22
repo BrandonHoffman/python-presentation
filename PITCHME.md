@@ -140,7 +140,7 @@
 @ul
 - Iterators allow python to iterator over a list of values computing results 1 step at a time
 - Iterators must define a \_\_iter\_\_ function which enables them to work with the in keyword
-- they also must define a \_\_next_\\_ function that progresses the iterator to the next value (note: next in python2)
+- they also must define a \_\_next\_\_ function that progresses the iterator to the next value (note: next in python2)
 - once there are no more values to iterate a StopIteration exception should be raised
 @ulend
 
