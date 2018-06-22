@@ -162,7 +162,7 @@
 
 @ul
 - iterators are great since they only store one iteration in memory at a time
-- you can add other method to them that may be useful like (example: reset())
+- you can add other method to them that may be useful like reset()
 - however in order to define one you must implement a few different methods
 - luckily python provides another option that can be implemented easier
 @ulend
