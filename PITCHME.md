@@ -1,7 +1,7 @@
 @title[Introduction]
 
 # Python
-## Demystifying Da Dunder 
+## Demystifying the Dunder 
 
 ---
 
@@ -47,7 +47,7 @@
 ```
 ---
 
-@title["Data Model"]
+@title[Data Model]
 
 ### Python Data Model
 
@@ -65,7 +65,7 @@
 
 ---
 
-@title["Why does this matter"]
+@title[Why does this matter]
 
 ### Why does this matter?
 
@@ -81,7 +81,7 @@
 @olend
 
 ---
-@title["__dict__"]
+@title[\_\_dict\_\_]
 
 ### \_\_dict\_\_
 
