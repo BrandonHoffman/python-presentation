@@ -1,7 +1,7 @@
 @title[Introduction]
 
 # Python
-## Demystifying the Dunder 
+## Demystifyied
 
 ---
 
