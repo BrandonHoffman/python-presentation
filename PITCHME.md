@@ -70,7 +70,7 @@
 
 @ol
 - It can help you understand what objects are capable of when debugging
-- understanding these methods can provide a deeper understanding of the python language
+- understanding these methods can provide a deeper knowledge of the python language
 - effecticly using these data model methods can create classes that are:
     @ul
     - easier to use
