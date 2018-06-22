@@ -1,0 +1,1 @@
+<__main__.Binomial object at 0x7f4851535dd8>
