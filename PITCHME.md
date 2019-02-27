@@ -356,7 +356,6 @@ class Counter:
     - be subclassed
     - implement additional public methods
     - implement additional data model methods
-- In general though I would suggest initially making use of generators until they no longer fit your use case.
 
 --- 
 
