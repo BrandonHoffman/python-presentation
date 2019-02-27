@@ -342,8 +342,8 @@ class Counter:
         raise StopIteration
 ```
 @[1-13](the same two data models methods generators use to iterate values can be used by any class)
-@[6-7](the same __iter__ function returns the object we will be iterating in this can self)
-@[8-13](the __next__ function progresses the iterator or raises my stop iteration error)
+@[6-7](\_\_iter\_\_ will return our iterable in this case self)
+@[8-13](__next__ progresses the iterator to the next step)
 ---
 
 ### Why would I use an Iterator over a Generator
