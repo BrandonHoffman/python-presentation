@@ -392,8 +392,8 @@ with File("test.txt") as log:
 ```
 @[1-3](create a function for opening a file)
 @[4-5](the enter function is called at the start of the block)
-@[5](the return from __enter__ can optionally be set to a variable using the as keyword)
-@[6-10](the __exit__ function handles the clean up and can optionally handle exceptions)
+@[5](the return from \_\_enter\_\_ can optionally be set to a variable using the as keyword)
+@[6-10](the \_\_exit\_\_ function handles the clean up and can optionally handle exceptions)
 @[10](returning a True prevents the exception from propigating)
 ---
 
