@@ -402,7 +402,7 @@ with File("test.txt") as log:
 - this library actually allows you to define a context manager functionally using the yield statement
 
 ```
-import contextmanager
+from contextlib import contextmanager
 
 @contextmanager
 def file(filename)
