@@ -1,7 +1,6 @@
 @title[Introduction]
 
-# Python
-## Demystifyied
+# The magic of python
 
 ---
 
@@ -268,21 +267,20 @@ def cahce(func):
 @[6-12](the \_\_call\_\_ function of our new class will be what gets called in place of our original function)
 @[14-15](we add the decorator to our function )
 @[18-19](the fib function is now an instance of the Cache class instead of function.)
-@[21-30](some people may prefer using the function syntax but this is functionally equivalent to the above class)
+@[21-31](some people may prefer using the function syntax but this is functionally equivalent to the above class)
 ---
 
 ### generators
 
 - a generator is a funtion making use of the `yield` statement within python
-- when a generator function gets called it returns a generator object which can be used to iterate through a sequence of results
-- a yield statement results in the state of the variables in the function being saved while the yielded value is handed to the calling function
-- eventually when the generator runs out of values to yield and the end of a function is hit a StopIteration exception is raised and execution halts
+- the yield statement is used to step through a generator 1 value at a time while maintaining the current execution state
+- after the generato function reaches the end of its definition a StopIteration exception is reaised
 
 ---
 ```[python]
 def count(start: int, end: int):
    cur = start
-   while cur < end:
+   while cur <= end:
        yield cur
        cur += 1
 count.__class__
@@ -292,18 +290,19 @@ count(1, 10).__class__
 dir(count(1, 10))
 # ['__iter__', '__next__', ...]
 ```
-@[1-6](this is what the basic definition of a generator would look like)
-@[7-8](you will notic that count is just simply a function)
-@[9-10](however when that function is called a special generator type is returned)
-@[11-12](these two properties are what allows for the generator to be iterated in the way it does.)
+@[1-5](this is what the basic definition of a generator would look like)
+@[6-7](you will notic that count is just simply a function)
+@[8-9](however when that function is called a special generator type is returned)
+@[10-11](these two properties are what allows for the generator to be iterated in the way it does.)
 
 ---
 
-- \_\_iter\_\_: allows the function to be iterable.
-  - other iterable classes such as lists and sets also define this fuction (can be used with `for .. in` loops)
+- \_\_iter\_\_: defines the object as iterable
+  - all iterable objects must implement this method.
+  - the return of this method is what is iterated over within a for ... in loop
+  - it is common for the return of this function to be self within an iterable
 - \_\_next\_\_: this function is used to step through each value one at a time
-  - this is the function that is responsible for raising the StopIteration when no more values are avaliable
-  - this function can be called by passing this instance to the next function
+  - this function also raises the StopIteration when there are no more values to iterate over
 
 ---
 
@@ -317,6 +316,7 @@ print(next(counter))
 # Traceback (most recent call last):
 #   File "<stdin>", line 1, in <module>
 # StopIteration
+
 for i in count(1, 2):
     print i
 # 1
@@ -336,7 +336,7 @@ class Counter:
         return self
     def __next__(self):
         val = self._cur
-        if val < self._end:
+        if val <= self._end:
             self._cur += 1
             return val
         raise StopIteration
@@ -427,7 +427,6 @@ with file("test.txt") as log:
     - determining if an object should evaluate represent true or false when used conditionally
     - creating new classes and subclasses
     - and much more
-- understanding these methods is your key to understanding many of the `magic` within python
 
 
 ---
