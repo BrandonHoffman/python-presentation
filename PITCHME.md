@@ -363,7 +363,7 @@ class Counter:
 
 - context managers allow for for blocks of code with a setup and teardown
 - additionally context managers are able to seamlessly handle errors thrown within them
-- they must define a __enter__ and __exit__ function
+- they must define a \_\_enter\_\_ and \_\_exit\_\_ function
 - a common use case for context managers is opening a file.
 
 ```[python]
