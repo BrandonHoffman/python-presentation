@@ -159,7 +159,7 @@ class Binomial:
         return self.slop * x + self.intercept
 ```
 @[1-4](a simple class to represent a mathmatical equation in the for mx + b)
-@[6-7](by implementing the \_\_call\_\_ method we now made all binomials callable as functions
+@[6-7](by implementing the \_\_call\_\_ method we now made all binomials callable as functions)
 
 ---
 
