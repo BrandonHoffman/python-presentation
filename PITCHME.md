@@ -390,11 +390,12 @@ class File(object):
 with File("test.txt") as log:
     log.write("test")
 ```
-@[1-3](create a function for opening a file)
+@[1-3](create a class for opening a file)
 @[4-5](the enter function is called at the start of the block)
 @[5](the return from \_\_enter\_\_ can optionally be set to a variable using the as keyword)
 @[6-10](the \_\_exit\_\_ function handles the clean up and can optionally handle exceptions)
 @[10](returning a True prevents the exception from propigating)
+@[12-13](sample usage of our file context manager)
 ---
 
 - alternativly context managers are able to be defined via the contextmanager library
