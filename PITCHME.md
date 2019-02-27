@@ -399,7 +399,7 @@ with File("test.txt") as log:
 ---
 
 - alternativly context managers are able to be defined via the contextmanager library
-- this library actually allows you to use you to define a generator which can be used as a context manager
+- this library actually allows you to define a context manager functionally using the yield statement
 
 ```
 import contextmanager
