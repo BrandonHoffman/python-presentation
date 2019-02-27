@@ -343,7 +343,7 @@ class Counter:
 ```
 @[1-13](the same two data models methods generators use to iterate values can be used by any class)
 @[6-7](\_\_iter\_\_ will return our iterable in this case self)
-@[8-13](__next__ progresses the iterator to the next step)
+@[8-13](\_\_next\_\_ progresses the iterator to the next step)
 ---
 
 ### Why would I use an Iterator over a Generator
