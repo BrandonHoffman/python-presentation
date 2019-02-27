@@ -115,7 +115,7 @@ obj.x = 1
 obj.__dict__
 # {'x': 1}
 ```
-@[1-4] most classes in python have `__dict__` property which is used to store its properties
+@[1-4](most classes in python have `__dict__` property which is used to store its properties)
 
 ---
 ### Functions
@@ -134,19 +134,19 @@ fib.__class__
 # <class 'function'>
 dir(fib)
 # ['__annotations__', '__call__', '__defaults__', '__doc__', '__kwdefaults__', ...]
-
-@[1-6] a simple fib function for demonstration purposes
-@[7-8] the fib function is actually an instance of the function class
-@[9-10] this class implements a few special data access methods which define how the instance works when called
 ```
+@[1-6](a simple fib function for demonstration purposes)
+@[7-8](the fib function is actually an instance of the function class)
+@[9-10](this class implements a few special data access methods which define how the instance works when called)
+
 ---
-- __annotations__: contains the type annotation for a function (mostly used by IDE's)
-- __call__: tells the interpreter that this instance is callable
-- __defaults__: stores the default values of default parameters used by the function
-- __doc__: contains the doc string of the function (mostly used by IDE's)
+- \_\_annotations\_\_: contains the type annotation for a function (mostly used by IDE's)
+- \_\_call\_\_: tells the interpreter that this instance is callable
+- \_\_defaults\_\_: stores the default values of default parameters used by the function
+- \_\_doc\_\_: contains the doc string of the function (mostly used by IDE's)
   - this parameter is not specific to functions it is actually used by all other types that support doc strings such as classes and modules
-- __kwdefaults__: store the defaults of keyword only arguments
-- note: that any object that defines a __call__ attribute is made callable by the python interpreter
+- \_\_kwdefaults\_\_: store the defaults of keyword only arguments
+- note: that any object that defines a \_\_call\_\_ attribute is made callable by the python interpreter
 ---
 
 ### Decorators
@@ -158,7 +158,7 @@ dir(fib)
 def fib(n: int):
    ...
 ```
-@[1-4] how do you think decorators work
+@[1-4](how do you think decorators work)
 
 ---
 
@@ -167,7 +167,7 @@ def fib(n: int)
     ...
 fib = decorator(fib)
 ```
-@[3] the previous code is functionally equivalent to  this
+@[3](the previous code is functionally equivalent to this)
 ---
 
 - decorators themselves are just functions.
@@ -198,11 +198,11 @@ def fib(n: int):
 fib.__class__
 # <class __main__.Cache at 0x106942a78>
 ```
-@[1] lets create a class that can be used as our decorator
-@[2-4] the __init__ function for this class is what initially gets called passing in the function
-@[6-12] the __call__ function of our new class will be what gets called in place of our original function
-@[14-15] we add the decorator to our function 
-@[17-18] note out fib object in now an instance of the Cache class not function like it was originally.
+@[1](lets create a class that can be used as our decorator)
+@[2-4](the \_\_init\_\_ function for this class is what initially gets called passing in the function)
+@[6-12](the \_\_call\_\_ function of our new class will be what gets called in place of our original function)
+@[14-15](we add the decorator to our function )
+@[17-18](note out fib object in now an instance of the Cache class not function like it was originally.)
 ---
 
 ### generators
@@ -226,22 +226,22 @@ count(1, 10).__class__
 dir(count(1, 10))
 # ['__iter__', '__next__', ...]
 ```
-@[1-6] this is what the basic definition of a generator would look like
-@[7-8] you will notic that count is just simply a function
-@[9-10] however when that function is called a special generator type is returned
-@[11-12] these two properties are what allows for the generator to be iterated in the way it does.
+@[1-6](this is what the basic definition of a generator would look like)
+@[7-8](you will notic that count is just simply a function)
+@[9-10](however when that function is called a special generator type is returned)
+@[11-12](these two properties are what allows for the generator to be iterated in the way it does.)
 
 ---
 
-- __iter__: allows the function to be iterable.
+- \_\_iter\_\_: allows the function to be iterable.
   - other iterable classes such as lists and sets also define this fuction (can be used with `for .. in` loops)
-- __next__: this function is used to step through each value one at a time
+- \_\_next\_\_: this function is used to step through each value one at a time
   - this is the function that is responsible for raising the StopIteration when no more values are avaliable
   - this function can be called by passing this instance to the next function
 
 ---
 
-```
+```[python]
 counter = count(1, 2)
 print(next(counter))
 # 1
@@ -251,6 +251,10 @@ print(next(counter))
 # Traceback (most recent call last):
 #   File "<stdin>", line 1, in <module>
 # StopIteration
+for i in count(1, 2):
+    print i
+# 1
+# 2
 ```
 ---
 
@@ -271,9 +275,9 @@ class Counter:
             return val
         raise StopIteration
 ```
-@[1-13] the same two data models methods generators use to iterate values can be used by any class
-@[6-7] the same __iter__ function returns the object we will be iterating in this can self
-@[8-13] the __next__ function progresses the iterator or raises my stop iteration error
+@[1-13](the same two data models methods generators use to iterate values can be used by any class)
+@[6-7](the same __iter__ function returns the object we will be iterating in this can self)
+@[8-13](the __next__ function progresses the iterator or raises my stop iteration error)
 ---
 
 ### Why would I use an Iterator over a Generator
@@ -288,7 +292,7 @@ class Counter:
     - implement additional data model methods
 - In general though I would suggest initially making use of generators until they no longer fit your use case.
 
---- context managers
+--- 
 
 ### Context managers
 
@@ -297,15 +301,16 @@ class Counter:
 - they must define a __enter__ and __exit__ function
 - a common use case for context managers is opening a file.
 
-```
+```[python]
 f = open("test.txt")
 dir(f)
 # ['__enter__', '__exit__', ...]
 
 ```
+
 ---
 
-```
+```[python]
 class File(object):
     def __init__(self, file_name, method):
         self.file_obj = open(file_name, method)
@@ -320,11 +325,11 @@ class File(object):
 with File("test.txt") as log:
     log.write("test")
 ```
-@[1-3] create a function for opening a file
-@[4-5] the enter function is called at the start of the block
-@[5] the return from __enter__ can optionally be set to a variable using the as keyword
-@[6-10] the __exit__ function handles the clean up and can optionally handle exceptions
-@[10] returning a True prevents the exception from propigating
+@[1-3](create a function for opening a file)
+@[4-5](the enter function is called at the start of the block)
+@[5](the return from __enter__ can optionally be set to a variable using the as keyword)
+@[6-10](the __exit__ function handles the clean up and can optionally handle exceptions)
+@[10](returning a True prevents the exception from propigating)
 ---
 
 - alternativly context managers are able to be defined via the contextmanager library
