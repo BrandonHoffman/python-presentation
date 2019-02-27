@@ -178,7 +178,7 @@ print(f(2))
     - \_\_abs\_\_
     - \_\_pow\_\_
     - \_\_xor\_\_
-- note that operators which involve two objects the function of the first operand is called passing the second opperand as a parameter
+- for operators which involve two objects the function of the first operand is called passing the second opperand as a parameter
 ---
 
 ```
