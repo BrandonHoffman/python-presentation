@@ -132,23 +132,75 @@ def fib(n: int):
 
 fib.__class__
 # <class 'function'>
+
 dir(fib)
 # ['__annotations__', '__call__', '__defaults__', '__doc__', '__kwdefaults__', ...]
 ```
 @[1-6](a simple fib function for demonstration purposes)
-@[7-8](the fib function is actually an instance of the function class)
-@[9-10](this class implements a few special data access methods which define how the instance works when called)
+@[8-9](the fib function is actually an instance of the function class)
+@[11-12](this class implements a few special data access methods which define how the instance works when called)
 
 ---
 - \_\_annotations\_\_: contains the type annotation for a function (mostly used by IDE's)
 - \_\_call\_\_: tells the interpreter that this instance is callable
 - \_\_defaults\_\_: stores the default values of default parameters used by the function
 - \_\_doc\_\_: contains the doc string of the function (mostly used by IDE's)
-  - this parameter is not specific to functions it is actually used by all other types that support doc strings such as classes and modules
 - \_\_kwdefaults\_\_: store the defaults of keyword only arguments
 - note: that any object that defines a \_\_call\_\_ attribute is made callable by the python interpreter
 ---
 
+```[python]
+class Binomial:
+    def __init__(self, slop, intercept):
+        self.slop = slop
+        self.intercept = intercept
+
+    def __call__(self, x)
+        return self.slop * x + self.intercept
+```
+@[1-4](a simple class to represent a mathmatical equation in the for mx + b)
+@[6-7](by implementing the \_\_call\_\_ method we now made all binomials callable as functions
+
+---
+
+```[python]
+f = Binomial(5, 2)
+print(f(2))
+# 12
+```
+
+-- 
+
+### Operators
+
+- python uses a bunch of functions to define how binary are handled by an object
+    - \_\_add\_\_
+    - \_\_abs\_\_
+    - \_\_pow\_\_
+    - \_\_xor\_\_
+- note that operators which involve two objects the function of the first operand is called passing the second opperand as a parameter
+---
+
+```
+class Binomial:
+    ...
+    def __add__(self, other):
+        slop = self.slop + other.slop
+        intercept = self.intercept + other.intercept
+        return Binomial(slop, intercept)
+```
+@[3-7](note: it is possible for other to be an instance of someting other than a Binomial. In an ideal implementation these cases would be handled)
+
+---
+
+```[python]
+f = Binomial(1, 1)
+g = Binomial(2, 2)
+res = (f + g)(1)
+print(res)
+# 6
+```
+---
 ### Decorators
 
 @title[Decorators]
