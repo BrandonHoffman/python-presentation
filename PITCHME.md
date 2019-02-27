@@ -250,12 +250,25 @@ def fib(n: int):
 
 fib.__class__
 # <class __main__.Cache at 0x106942a78>
+
+def cahce(func):
+    _cache = {}
+    def new_fun(n):
+        nonlocal _cache
+        try:
+            return _cache[n]
+        except KeyError:
+            value = func(n)
+            _cache[n] = value
+            return value
+    return new_func
 ```
 @[1](lets create a class that can be used as our decorator)
 @[2-4](the \_\_init\_\_ function for this class is what initially gets called passing in the function)
 @[6-12](the \_\_call\_\_ function of our new class will be what gets called in place of our original function)
 @[14-15](we add the decorator to our function )
-@[18-19](note out fib object in now an instance of the Cache class not function like it was originally.)
+@[18-19](the fib function is now an instance of the Cache class instead of function.)
+@[21-30](some people may prefer using the function syntax but this is functionally equivalent to the above class)
 ---
 
 ### generators
