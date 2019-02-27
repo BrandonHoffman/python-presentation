@@ -225,9 +225,10 @@ fib = decorator(fib)
 - decorators themselves are just functions.
 - the decorator function is passed the function that was defined below as its only parameter
 - the decorator can then either:
-    - return a new function that will be used in place of the original definition
+    - return a new object that will replace the original function definition
     - manipulate the data model methods of the existing function and return the modified function
 
+---
 
 ```[python]
 class Cache(object):
