@@ -255,7 +255,7 @@ fib.__class__
 @[2-4](the \_\_init\_\_ function for this class is what initially gets called passing in the function)
 @[6-12](the \_\_call\_\_ function of our new class will be what gets called in place of our original function)
 @[14-15](we add the decorator to our function )
-@[17-18](note out fib object in now an instance of the Cache class not function like it was originally.)
+@[18-19](note out fib object in now an instance of the Cache class not function like it was originally.)
 ---
 
 ### generators
